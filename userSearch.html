@@ -1,0 +1,86 @@
+<html ng-app="app">
+<head>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src = "usersearch.js"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="mycss.css"
+rel="stylesheet" />
+</head>
+<body  ng-controller="gitHubDataController"  >
+<div class="container">
+
+<div><h1>Welcome to Github User Search</h1></div>
+  <form class="form-horizontal">
+   
+    <div class="form-group col-sm-10" style=" margin-left: 170px;">
+<label class="control-label col-sm-4">Enter user name : </label>
+      <input type="text" class="col-sm-4" placeholder="User Name"  ng-model="username">
+      
+        <button class="btn btn-default" type="submit" ng-click="userSearch()" ><i class="glyphicon glyphicon-search"></i></button>
+      
+    
+    </div>
+  </form>
+   <div >          
+<div class="row col-sm-4" ng-repeat="rows in userData.data.items">
+  <a class="span4"  href="" 
+  ng-click="openModal(rows.id)"data-toggle="modal" data-target="#myModal" >{{rows.login}}</a>
+</div>
+    
+    <!-- <tbody ng-repeat="user in userData.data.items" >
+    
+        <td style="    color: #1EC8AC;" ng-href="user.avatar_url"></td>
+        <td style="    color: #1EC8AC;"><a href=""  ng-click="openModal(user.id)"data-toggle="modal" data-target="#myModal" >{{user.login}}</a></td>
+      
+  </table> --><!--  
+<label ng-repeat="user in userData.data.items">{{user.avatar_url}}</label>
+  <h1 class="text-center"><a class="col-sm-4" ng-click="openModal()" href="" data-toggle="modal" data-target="#vulDetails" 
+  ng-repeat="user in userData.data.items">{{user.login}}</a> <br>
+</h1> -->
+  </div>
+  <div class="modal fade" id="myModal" aria-hidden="true"
+data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog" style="width: 42%;">
+<div class="modal-content" style="    max-height: 400px;
+    overflow-y: auto;">
+<div class="modal-header ">
+<button type="button" class="close" data-dismiss="modal"
+aria-hidden="true">&times;</button>
+<h4 class="modal-title">User Details</h4>
+</div> 
+<div class="modal-body" style="overflow-y: auto;">
+<div class="row top-buffer">
+<table class="table table-hover">
+<thead>
+<tr>
+<th>Repositories</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="repo in repoData.data" style="">
+<td>{{repo.name}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div> 
+<div class="modal-footer">
+<button class="btn btn-inverse btn-raised" data-dismiss="modal">Ok</button>
+
+</div>
+</div>
+</div>
+</div>
+  
+<!-- <input type="text" class="form-control" ng-model="username"><br><button class="btn btn-primary" style="margin-left: 500px;">Search</button> -->
+
+<!-- <h1 class="text-center"><span class="col-sm-4">{{user.login}}</span> <br>
+</h1> -->
+</div>
+</body>
+</html>

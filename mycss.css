@@ -1,0 +1,32 @@
+body { background-image: url(1.jpg);}
+h1{    position: initial;
+    color: #13B288;
+    font-size: 51px;
+    margin-left: 197px ;}
+label {
+	/* margin-left:300px; */
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 25px;
+    line-height: 1.42857143;
+    color: #1EC8AC;
+	}
+input[type=text] {
+  margin-top: 12px;
+    border-style: inset;
+    border-color: #1EC8AC;
+    border-width: 4px;
+}
+button{    margin-top: 13px;
+    border-width: 2px;
+    border-color: #1EC8AC;
+	}
+	a{
+	color: #1EC8AC;
+	font-size: 22px; 
+	    margin-left: 60px;
+
+	}
+a:focus, a:hover{
+color: #1EC8AC;
+font-size: 20px; 
+}
